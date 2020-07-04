@@ -6,8 +6,8 @@ Once we have the schema ready, we need to compile the .proto file using a protoc
 #
 protoc generates a .cs file which contains classes that can be used with our program.
 
->.\protoc.exe --csharp_out=.\ .\<filename>.proto
-
+>.\protoc.exe --csharp_out=\<output directory> \<filename>.proto
+>>.\protoc.exe --csharp_out=.\ \<filename>.proto
 #
 We also need to install few protobuff packages.
 >Install-Package Google.Protobuf 
