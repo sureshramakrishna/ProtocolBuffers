@@ -1,0 +1,37 @@
+﻿syntax = "proto3";
+import "google/protobuf/any.proto";
+
+message ScalarTypes {
+    int32 Integer32 = 1;
+    uint32 UInteger32 = 2;
+    sint32 SInteger32 = 3;
+    fixed32 Fixed32 = 4;
+    sfixed32 SFixed32 = 5;
+	int64 Integer64 = 6;
+    uint64 UInteger64 = 7;
+    sint64 SInteger64 = 8;
+    fixed64 Fixed64 = 9;
+    sfixed64 SFixed64 = 10;
+	double Double = 11;
+    float Float = 12;
+    bool Booelan = 13;
+    string String = 14;
+    bytes Bytes = 15;
+}
+
+enum Gender {
+    Male = 0;
+    Female = 1;
+}
+
+message ComplexTypes {
+    Gender Sex = 1;
+    ScalarTypes SubClass = 2;
+    repeated int32 Numbers = 3;
+    google.protobuf.Any Details = 4;
+    oneof Oneof {
+        int32 Integer32 = 5;
+        int64 Integer64 = 6;
+    }
+    map<int32, string> Maps = 7;
+}
