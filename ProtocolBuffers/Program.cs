@@ -83,6 +83,28 @@ namespace ProtocolBuffers
             if(complexTypeDecode.Details.Is(ScalarTypes.Descriptor))
                 complexTypeDecode.Details.TryUnpack(out ScalarTypes details);
             var oneOfCase = complexTypeDecode.OneofCase; //returns the name of the field that is set 
+
+            NullableTypes nullableTypes = new NullableTypes
+            {
+                NullableInt = null,
+                NullableLong = null,
+                NullableUInt = null,
+                NullableULong = null,
+                NullableDouble = null,
+                NullableFloat = null
+            };
+
+            var nullableTypesEncode = Encode(nullableTypes);
+            var nullableTypesDecode = Decode(nullableTypesEncode, NullableTypes.Parser);
+
+            TimeTypes timeTypes = new TimeTypes
+            {
+                Subject = "Random",
+                Time = Timestamp.FromDateTime(DateTime.UtcNow), //should be UTC
+                Duration = Duration.FromTimeSpan(new TimeSpan(100))
+            };
+            var timeTypesEncode = Encode(timeTypes);
+            var timeTypesDecode = Decode(timeTypesEncode, TimeTypes.Parser);
         }
     }
 }

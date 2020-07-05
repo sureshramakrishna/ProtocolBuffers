@@ -1,5 +1,8 @@
 ﻿syntax = "proto3";
 import "google/protobuf/any.proto";
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/duration.proto";  
+import "google/protobuf/timestamp.proto";
 
 message ScalarTypes {
     int32 Integer32 = 1;
@@ -34,4 +37,19 @@ message ComplexTypes {
         int64 Integer64 = 6;
     }
     map<int32, string> Maps = 7;
+}
+
+message NullableTypes {
+    google.protobuf.Int32Value NullableInt = 1; //int? in C#
+    google.protobuf.Int64Value NullableLong = 2; //long? in C#
+    google.protobuf.UInt32Value NullableUInt = 3; //uint? in C#
+    google.protobuf.UInt64Value NullableULong = 4; //ulong? in C#
+    google.protobuf.DoubleValue NullableDouble = 5; //double? in C#
+    google.protobuf.FloatValue NullableFloat = 6; //float? in C#
+}
+
+message TimeTypes {
+    string subject = 1;
+    google.protobuf.Timestamp Time = 2; //Equivalent to DateTime in C#
+    google.protobuf.Duration Duration = 3; //Equivalent to TimeSpan in C#
 }

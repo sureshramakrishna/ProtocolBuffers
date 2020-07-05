@@ -22,25 +22,40 @@ public static partial class SchemasReflection {
   static SchemasReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "Cg1TY2hlbWFzLnByb3RvGhlnb29nbGUvcHJvdG9idWYvYW55LnByb3RvIpgC",
-          "CgtTY2FsYXJUeXBlcxIRCglJbnRlZ2VyMzIYASABKAUSEgoKVUludGVnZXIz",
-          "MhgCIAEoDRISCgpTSW50ZWdlcjMyGAMgASgREg8KB0ZpeGVkMzIYBCABKAcS",
-          "EAoIU0ZpeGVkMzIYBSABKA8SEQoJSW50ZWdlcjY0GAYgASgDEhIKClVJbnRl",
-          "Z2VyNjQYByABKAQSEgoKU0ludGVnZXI2NBgIIAEoEhIPCgdGaXhlZDY0GAkg",
-          "ASgGEhAKCFNGaXhlZDY0GAogASgQEg4KBkRvdWJsZRgLIAEoARINCgVGbG9h",
-          "dBgMIAEoAhIPCgdCb29lbGFuGA0gASgIEg4KBlN0cmluZxgOIAEoCRINCgVC",
-          "eXRlcxgPIAEoDCKDAgoMQ29tcGxleFR5cGVzEhQKA1NleBgBIAEoDjIHLkdl",
-          "bmRlchIeCghTdWJDbGFzcxgCIAEoCzIMLlNjYWxhclR5cGVzEg8KB051bWJl",
-          "cnMYAyADKAUSJQoHRGV0YWlscxgEIAEoCzIULmdvb2dsZS5wcm90b2J1Zi5B",
-          "bnkSEwoJSW50ZWdlcjMyGAUgASgFSAASEwoJSW50ZWdlcjY0GAYgASgDSAAS",
-          "JQoETWFwcxgHIAMoCzIXLkNvbXBsZXhUeXBlcy5NYXBzRW50cnkaKwoJTWFw",
-          "c0VudHJ5EgsKA2tleRgBIAEoBRINCgV2YWx1ZRgCIAEoCToCOAFCBwoFT25l",
-          "b2YqHgoGR2VuZGVyEggKBE1hbGUQABIKCgZGZW1hbGUQAWIGcHJvdG8z"));
+          "Cg1TY2hlbWFzLnByb3RvGhlnb29nbGUvcHJvdG9idWYvYW55LnByb3RvGh5n",
+          "b29nbGUvcHJvdG9idWYvd3JhcHBlcnMucHJvdG8aHmdvb2dsZS9wcm90b2J1",
+          "Zi9kdXJhdGlvbi5wcm90bxofZ29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFtcC5w",
+          "cm90byKYAgoLU2NhbGFyVHlwZXMSEQoJSW50ZWdlcjMyGAEgASgFEhIKClVJ",
+          "bnRlZ2VyMzIYAiABKA0SEgoKU0ludGVnZXIzMhgDIAEoERIPCgdGaXhlZDMy",
+          "GAQgASgHEhAKCFNGaXhlZDMyGAUgASgPEhEKCUludGVnZXI2NBgGIAEoAxIS",
+          "CgpVSW50ZWdlcjY0GAcgASgEEhIKClNJbnRlZ2VyNjQYCCABKBISDwoHRml4",
+          "ZWQ2NBgJIAEoBhIQCghTRml4ZWQ2NBgKIAEoEBIOCgZEb3VibGUYCyABKAES",
+          "DQoFRmxvYXQYDCABKAISDwoHQm9vZWxhbhgNIAEoCBIOCgZTdHJpbmcYDiAB",
+          "KAkSDQoFQnl0ZXMYDyABKAwigwIKDENvbXBsZXhUeXBlcxIUCgNTZXgYASAB",
+          "KA4yBy5HZW5kZXISHgoIU3ViQ2xhc3MYAiABKAsyDC5TY2FsYXJUeXBlcxIP",
+          "CgdOdW1iZXJzGAMgAygFEiUKB0RldGFpbHMYBCABKAsyFC5nb29nbGUucHJv",
+          "dG9idWYuQW55EhMKCUludGVnZXIzMhgFIAEoBUgAEhMKCUludGVnZXI2NBgG",
+          "IAEoA0gAEiUKBE1hcHMYByADKAsyFy5Db21wbGV4VHlwZXMuTWFwc0VudHJ5",
+          "GisKCU1hcHNFbnRyeRILCgNrZXkYASABKAUSDQoFdmFsdWUYAiABKAk6AjgB",
+          "QgcKBU9uZW9mIscCCg1OdWxsYWJsZVR5cGVzEjAKC051bGxhYmxlSW50GAEg",
+          "ASgLMhsuZ29vZ2xlLnByb3RvYnVmLkludDMyVmFsdWUSMQoMTnVsbGFibGVM",
+          "b25nGAIgASgLMhsuZ29vZ2xlLnByb3RvYnVmLkludDY0VmFsdWUSMgoMTnVs",
+          "bGFibGVVSW50GAMgASgLMhwuZ29vZ2xlLnByb3RvYnVmLlVJbnQzMlZhbHVl",
+          "EjMKDU51bGxhYmxlVUxvbmcYBCABKAsyHC5nb29nbGUucHJvdG9idWYuVUlu",
+          "dDY0VmFsdWUSNAoOTnVsbGFibGVEb3VibGUYBSABKAsyHC5nb29nbGUucHJv",
+          "dG9idWYuRG91YmxlVmFsdWUSMgoNTnVsbGFibGVGbG9hdBgGIAEoCzIbLmdv",
+          "b2dsZS5wcm90b2J1Zi5GbG9hdFZhbHVlInMKCVRpbWVUeXBlcxIPCgdzdWJq",
+          "ZWN0GAEgASgJEigKBFRpbWUYAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGlt",
+          "ZXN0YW1wEisKCER1cmF0aW9uGAMgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1",
+          "cmF0aW9uKh4KBkdlbmRlchIICgRNYWxlEAASCgoGRmVtYWxlEAFiBnByb3Rv",
+          "Mw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
+        new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Gender), }, null, new pbr::GeneratedClrTypeInfo[] {
           new pbr::GeneratedClrTypeInfo(typeof(global::ScalarTypes), global::ScalarTypes.Parser, new[]{ "Integer32", "UInteger32", "SInteger32", "Fixed32", "SFixed32", "Integer64", "UInteger64", "SInteger64", "Fixed64", "SFixed64", "Double", "Float", "Booelan", "String", "Bytes" }, null, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::ComplexTypes), global::ComplexTypes.Parser, new[]{ "Sex", "SubClass", "Numbers", "Details", "Integer32", "Integer64", "Maps" }, new[]{ "Oneof" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+          new pbr::GeneratedClrTypeInfo(typeof(global::ComplexTypes), global::ComplexTypes.Parser, new[]{ "Sex", "SubClass", "Numbers", "Details", "Integer32", "Integer64", "Maps" }, new[]{ "Oneof" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+          new pbr::GeneratedClrTypeInfo(typeof(global::NullableTypes), global::NullableTypes.Parser, new[]{ "NullableInt", "NullableLong", "NullableUInt", "NullableULong", "NullableDouble", "NullableFloat" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::TimeTypes), global::TimeTypes.Parser, new[]{ "Subject", "Time", "Duration" }, null, null, null, null)
         }));
   }
   #endregion
@@ -893,6 +908,532 @@ public sealed partial class ComplexTypes : pb::IMessage<ComplexTypes> {
         }
         case 58: {
           maps_.AddEntriesFrom(input, _map_maps_codec);
+          break;
+        }
+      }
+    }
+  }
+
+}
+
+public sealed partial class NullableTypes : pb::IMessage<NullableTypes> {
+  private static readonly pb::MessageParser<NullableTypes> _parser = new pb::MessageParser<NullableTypes>(() => new NullableTypes());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<NullableTypes> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::SchemasReflection.Descriptor.MessageTypes[2]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public NullableTypes() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public NullableTypes(NullableTypes other) : this() {
+    NullableInt = other.NullableInt;
+    NullableLong = other.NullableLong;
+    NullableUInt = other.NullableUInt;
+    NullableULong = other.NullableULong;
+    NullableDouble = other.NullableDouble;
+    NullableFloat = other.NullableFloat;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public NullableTypes Clone() {
+    return new NullableTypes(this);
+  }
+
+  /// <summary>Field number for the "NullableInt" field.</summary>
+  public const int NullableIntFieldNumber = 1;
+  private static readonly pb::FieldCodec<int?> _single_nullableInt_codec = pb::FieldCodec.ForStructWrapper<int>(10);
+  private int? nullableInt_;
+  /// <summary>
+  ///int? in C#
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int? NullableInt {
+    get { return nullableInt_; }
+    set {
+      nullableInt_ = value;
+    }
+  }
+
+
+  /// <summary>Field number for the "NullableLong" field.</summary>
+  public const int NullableLongFieldNumber = 2;
+  private static readonly pb::FieldCodec<long?> _single_nullableLong_codec = pb::FieldCodec.ForStructWrapper<long>(18);
+  private long? nullableLong_;
+  /// <summary>
+  ///long? in C#
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public long? NullableLong {
+    get { return nullableLong_; }
+    set {
+      nullableLong_ = value;
+    }
+  }
+
+
+  /// <summary>Field number for the "NullableUInt" field.</summary>
+  public const int NullableUIntFieldNumber = 3;
+  private static readonly pb::FieldCodec<uint?> _single_nullableUInt_codec = pb::FieldCodec.ForStructWrapper<uint>(26);
+  private uint? nullableUInt_;
+  /// <summary>
+  ///uint? in C#
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public uint? NullableUInt {
+    get { return nullableUInt_; }
+    set {
+      nullableUInt_ = value;
+    }
+  }
+
+
+  /// <summary>Field number for the "NullableULong" field.</summary>
+  public const int NullableULongFieldNumber = 4;
+  private static readonly pb::FieldCodec<ulong?> _single_nullableULong_codec = pb::FieldCodec.ForStructWrapper<ulong>(34);
+  private ulong? nullableULong_;
+  /// <summary>
+  ///ulong? in C#
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public ulong? NullableULong {
+    get { return nullableULong_; }
+    set {
+      nullableULong_ = value;
+    }
+  }
+
+
+  /// <summary>Field number for the "NullableDouble" field.</summary>
+  public const int NullableDoubleFieldNumber = 5;
+  private static readonly pb::FieldCodec<double?> _single_nullableDouble_codec = pb::FieldCodec.ForStructWrapper<double>(42);
+  private double? nullableDouble_;
+  /// <summary>
+  ///double? in C#
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public double? NullableDouble {
+    get { return nullableDouble_; }
+    set {
+      nullableDouble_ = value;
+    }
+  }
+
+
+  /// <summary>Field number for the "NullableFloat" field.</summary>
+  public const int NullableFloatFieldNumber = 6;
+  private static readonly pb::FieldCodec<float?> _single_nullableFloat_codec = pb::FieldCodec.ForStructWrapper<float>(50);
+  private float? nullableFloat_;
+  /// <summary>
+  ///float? in C#
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public float? NullableFloat {
+    get { return nullableFloat_; }
+    set {
+      nullableFloat_ = value;
+    }
+  }
+
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as NullableTypes);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(NullableTypes other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (NullableInt != other.NullableInt) return false;
+    if (NullableLong != other.NullableLong) return false;
+    if (NullableUInt != other.NullableUInt) return false;
+    if (NullableULong != other.NullableULong) return false;
+    if (!pbc::ProtobufEqualityComparers.BitwiseNullableDoubleEqualityComparer.Equals(NullableDouble, other.NullableDouble)) return false;
+    if (!pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.Equals(NullableFloat, other.NullableFloat)) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (nullableInt_ != null) hash ^= NullableInt.GetHashCode();
+    if (nullableLong_ != null) hash ^= NullableLong.GetHashCode();
+    if (nullableUInt_ != null) hash ^= NullableUInt.GetHashCode();
+    if (nullableULong_ != null) hash ^= NullableULong.GetHashCode();
+    if (nullableDouble_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableDoubleEqualityComparer.GetHashCode(NullableDouble);
+    if (nullableFloat_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.GetHashCode(NullableFloat);
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (nullableInt_ != null) {
+      _single_nullableInt_codec.WriteTagAndValue(output, NullableInt);
+    }
+    if (nullableLong_ != null) {
+      _single_nullableLong_codec.WriteTagAndValue(output, NullableLong);
+    }
+    if (nullableUInt_ != null) {
+      _single_nullableUInt_codec.WriteTagAndValue(output, NullableUInt);
+    }
+    if (nullableULong_ != null) {
+      _single_nullableULong_codec.WriteTagAndValue(output, NullableULong);
+    }
+    if (nullableDouble_ != null) {
+      _single_nullableDouble_codec.WriteTagAndValue(output, NullableDouble);
+    }
+    if (nullableFloat_ != null) {
+      _single_nullableFloat_codec.WriteTagAndValue(output, NullableFloat);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (nullableInt_ != null) {
+      size += _single_nullableInt_codec.CalculateSizeWithTag(NullableInt);
+    }
+    if (nullableLong_ != null) {
+      size += _single_nullableLong_codec.CalculateSizeWithTag(NullableLong);
+    }
+    if (nullableUInt_ != null) {
+      size += _single_nullableUInt_codec.CalculateSizeWithTag(NullableUInt);
+    }
+    if (nullableULong_ != null) {
+      size += _single_nullableULong_codec.CalculateSizeWithTag(NullableULong);
+    }
+    if (nullableDouble_ != null) {
+      size += _single_nullableDouble_codec.CalculateSizeWithTag(NullableDouble);
+    }
+    if (nullableFloat_ != null) {
+      size += _single_nullableFloat_codec.CalculateSizeWithTag(NullableFloat);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(NullableTypes other) {
+    if (other == null) {
+      return;
+    }
+    if (other.nullableInt_ != null) {
+      if (nullableInt_ == null || other.NullableInt != 0) {
+        NullableInt = other.NullableInt;
+      }
+    }
+    if (other.nullableLong_ != null) {
+      if (nullableLong_ == null || other.NullableLong != 0L) {
+        NullableLong = other.NullableLong;
+      }
+    }
+    if (other.nullableUInt_ != null) {
+      if (nullableUInt_ == null || other.NullableUInt != 0) {
+        NullableUInt = other.NullableUInt;
+      }
+    }
+    if (other.nullableULong_ != null) {
+      if (nullableULong_ == null || other.NullableULong != 0UL) {
+        NullableULong = other.NullableULong;
+      }
+    }
+    if (other.nullableDouble_ != null) {
+      if (nullableDouble_ == null || other.NullableDouble != 0D) {
+        NullableDouble = other.NullableDouble;
+      }
+    }
+    if (other.nullableFloat_ != null) {
+      if (nullableFloat_ == null || other.NullableFloat != 0F) {
+        NullableFloat = other.NullableFloat;
+      }
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          int? value = _single_nullableInt_codec.Read(input);
+          if (nullableInt_ == null || value != 0) {
+            NullableInt = value;
+          }
+          break;
+        }
+        case 18: {
+          long? value = _single_nullableLong_codec.Read(input);
+          if (nullableLong_ == null || value != 0L) {
+            NullableLong = value;
+          }
+          break;
+        }
+        case 26: {
+          uint? value = _single_nullableUInt_codec.Read(input);
+          if (nullableUInt_ == null || value != 0) {
+            NullableUInt = value;
+          }
+          break;
+        }
+        case 34: {
+          ulong? value = _single_nullableULong_codec.Read(input);
+          if (nullableULong_ == null || value != 0UL) {
+            NullableULong = value;
+          }
+          break;
+        }
+        case 42: {
+          double? value = _single_nullableDouble_codec.Read(input);
+          if (nullableDouble_ == null || value != 0D) {
+            NullableDouble = value;
+          }
+          break;
+        }
+        case 50: {
+          float? value = _single_nullableFloat_codec.Read(input);
+          if (nullableFloat_ == null || value != 0F) {
+            NullableFloat = value;
+          }
+          break;
+        }
+      }
+    }
+  }
+
+}
+
+public sealed partial class TimeTypes : pb::IMessage<TimeTypes> {
+  private static readonly pb::MessageParser<TimeTypes> _parser = new pb::MessageParser<TimeTypes>(() => new TimeTypes());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<TimeTypes> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::SchemasReflection.Descriptor.MessageTypes[3]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public TimeTypes() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public TimeTypes(TimeTypes other) : this() {
+    subject_ = other.subject_;
+    time_ = other.time_ != null ? other.time_.Clone() : null;
+    duration_ = other.duration_ != null ? other.duration_.Clone() : null;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public TimeTypes Clone() {
+    return new TimeTypes(this);
+  }
+
+  /// <summary>Field number for the "subject" field.</summary>
+  public const int SubjectFieldNumber = 1;
+  private string subject_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public string Subject {
+    get { return subject_; }
+    set {
+      subject_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "Time" field.</summary>
+  public const int TimeFieldNumber = 2;
+  private global::Google.Protobuf.WellKnownTypes.Timestamp time_;
+  /// <summary>
+  ///Equivalent to DateTime in C#
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::Google.Protobuf.WellKnownTypes.Timestamp Time {
+    get { return time_; }
+    set {
+      time_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "Duration" field.</summary>
+  public const int DurationFieldNumber = 3;
+  private global::Google.Protobuf.WellKnownTypes.Duration duration_;
+  /// <summary>
+  ///Equivalent to TimeSpan in C#
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::Google.Protobuf.WellKnownTypes.Duration Duration {
+    get { return duration_; }
+    set {
+      duration_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as TimeTypes);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(TimeTypes other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (Subject != other.Subject) return false;
+    if (!object.Equals(Time, other.Time)) return false;
+    if (!object.Equals(Duration, other.Duration)) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (Subject.Length != 0) hash ^= Subject.GetHashCode();
+    if (time_ != null) hash ^= Time.GetHashCode();
+    if (duration_ != null) hash ^= Duration.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (Subject.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(Subject);
+    }
+    if (time_ != null) {
+      output.WriteRawTag(18);
+      output.WriteMessage(Time);
+    }
+    if (duration_ != null) {
+      output.WriteRawTag(26);
+      output.WriteMessage(Duration);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (Subject.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Subject);
+    }
+    if (time_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Time);
+    }
+    if (duration_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Duration);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(TimeTypes other) {
+    if (other == null) {
+      return;
+    }
+    if (other.Subject.Length != 0) {
+      Subject = other.Subject;
+    }
+    if (other.time_ != null) {
+      if (time_ == null) {
+        Time = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+      }
+      Time.MergeFrom(other.Time);
+    }
+    if (other.duration_ != null) {
+      if (duration_ == null) {
+        Duration = new global::Google.Protobuf.WellKnownTypes.Duration();
+      }
+      Duration.MergeFrom(other.Duration);
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          Subject = input.ReadString();
+          break;
+        }
+        case 18: {
+          if (time_ == null) {
+            Time = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+          }
+          input.ReadMessage(Time);
+          break;
+        }
+        case 26: {
+          if (duration_ == null) {
+            Duration = new global::Google.Protobuf.WellKnownTypes.Duration();
+          }
+          input.ReadMessage(Duration);
           break;
         }
       }
