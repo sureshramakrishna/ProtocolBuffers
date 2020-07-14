@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Google.ProtocolBuffers", "Google.ProtocolBuffers\Google.ProtocolBuffers.csproj", "{B1B97E17-DA6F-4C95-BB52-90D4621DE15F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.ProtocolBuffers", "DotNet.ProtocolBuffers\DotNet.ProtocolBuffers.csproj", "{43B6EAFF-F441-477A-A811-825E6B14BDD1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B1B97E17-DA6F-4C95-BB52-90D4621DE15F} = {B1B97E17-DA6F-4C95-BB52-90D4621DE15F}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

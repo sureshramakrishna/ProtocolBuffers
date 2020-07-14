@@ -11,7 +11,7 @@ using Tynamix.ObjectFiller;
 
 namespace Google.ProtocolBuffers
 {
-    class Helper
+    public class Helper
     {
         public static byte[] Encode<T>(T anObject) where T : IMessage
         {
