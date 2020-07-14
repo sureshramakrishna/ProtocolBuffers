@@ -8,9 +8,9 @@ protoc generates a .cs file which contains classes that can be used within our p
 >.\protoc.exe --csharp_out=.\ \<filename>.proto
 
 ## Install nuget packages for protobuf support in C#. <br/>
-Google.ProtocolBuffers uses packages that was developed by Google. 
+<b>Google.ProtocolBuffers</b> uses packages that was developed by Google. 
 >Install-Package Google.Protobuf <br/>Install-Package Google.Protobuf.Tools <br/>
 
-DotNet.ProtocolBuffers uses packages that built in .net, this package is just a port of original google package rewritten in C#. 
+<b>DotNet.ProtocolBuffers</b> uses packages that built in .net, this package is just a port of original google package rewritten in C#. 
 >Install-Package protobuf-net
 
