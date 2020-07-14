@@ -11,31 +11,46 @@ namespace DotNet.ProtocolBuffers
     {
         static void Main(string[] args)
         {
+            SimpleProto();
+            CollectionsOfProto();
+            UsingProtoReaderWrite();
+        }
+        static void SimpleProto()
+        {
             MemoryStream memoryStream = new MemoryStream();
-            ProtoWriter.State pw = ProtoWriter.State.Create(memoryStream, null, null);
             var school = Helper.FillObject<School>();
-            var list = new List<School> { school };
 
             using (var file = File.Create("data.txt"))
-                Serializer.Serialize(file, list);
+                Serializer.Serialize(file, school);
 
-            List<School> schoolDecoded;
+            School schoolDecoded;
             using (var file = File.OpenRead("data.txt"))
-                schoolDecoded = Serializer.Deserialize<List<School>>(file);
+                schoolDecoded = Serializer.Deserialize<School>(file);
 
-            Assert.IsTrue(Helper.CompareObjects(list, schoolDecoded));
+            Assert.IsTrue(Helper.CompareObjects(school, schoolDecoded));
+        }
+        static void CollectionsOfProto()
+        {
+            MemoryStream memoryStream = new MemoryStream();
 
-            //WriteValue(100, 10, TypeEnum.INTEGER, pw);
-            //pw.Close();
-            //var bytes = memoryStream.ToArray();
-            //memoryStream.Dispose();
+            List<School> schools = new List<School>();
+            for(int i = 0; i<5;i++)
+                schools.Add(Helper.FillObject<School>());
 
-            //MemoryStream rs = new MemoryStream(bytes);
+            using (var file = File.Create("data.txt"))
+                Serializer.Serialize(file, schools);
 
-            //ProtoReader.State pr = ProtoReader.State.Create(rs, null, null);
-            //var fh = pr.ReadFieldHeader();
-            //var a = pr.ReadInt32();
-            // for objects that is of fixed size, we use normal Serializer.Deserialize/Serialize, when serializing a list of unknown size, we use ProtoReader and ProtoWriter. This is just a bitArray, which store, field number by doing WriteFieldNumber and value using Write[Type]
+            List<School> schoolsDecoded;
+            using (var file = File.OpenRead("data.txt"))
+                schoolsDecoded = Serializer.Deserialize<List<School>>(file);
+
+            Assert.IsTrue(Helper.CompareObjects(schools, schoolsDecoded));
+        }
+        static void UsingProtoReaderWrite()
+        {
+            var encoded = ProtoHelper.CreateProtoWriterBuffer();
+            var decoded = ProtoHelper.CreateProtoReaderBuffer(encoded);
+
         }
     }
 }

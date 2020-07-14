@@ -10,5 +10,6 @@ namespace Google.ProtocolBuffers
         [ProtoMember(2)] public string Name { get; set; }
         [ProtoMember(3)] public DateTime AdmissionDate { get; set; }
         [ProtoMember(4)] public int Age { get; set; }
+        [ProtoIgnore]    public bool IsDead { get; }
     }
 }
