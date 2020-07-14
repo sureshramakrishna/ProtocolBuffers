@@ -6,7 +6,11 @@ Once we have the schema ready, we need to compile the .proto file using a protoc
 protoc generates a .cs file which contains classes that can be used within our program.
 
 >.\protoc.exe --csharp_out=.\ \<filename>.proto
-#
-We also need to install few protobuff nuget packages.
->Install-Package Google.Protobuf 
->Install-Package Google.Protobuf.Tools
+
+## Install nuget packages for protobuf support in C#. <br/>
+<b>Google.ProtocolBuffers</b> uses packages that was developed by Google. 
+>Install-Package Google.Protobuf <br/>Install-Package Google.Protobuf.Tools <br/>
+
+<b>DotNet.ProtocolBuffers</b> uses packages that built in .net, this package is just a port of original google package rewritten in C#. 
+>Install-Package protobuf-net
+
