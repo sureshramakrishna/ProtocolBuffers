@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1169
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtocolBuffers", "ProtocolBuffers.csproj", "{8559ADA3-C5E8-4737-BFD8-4F3ADD06DB1F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Google.ProtocolBuffers", "Google.ProtocolBuffers\Google.ProtocolBuffers.csproj", "{B1B97E17-DA6F-4C95-BB52-90D4621DE15F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8559ADA3-C5E8-4737-BFD8-4F3ADD06DB1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8559ADA3-C5E8-4737-BFD8-4F3ADD06DB1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8559ADA3-C5E8-4737-BFD8-4F3ADD06DB1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8559ADA3-C5E8-4737-BFD8-4F3ADD06DB1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1B97E17-DA6F-4C95-BB52-90D4621DE15F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1B97E17-DA6F-4C95-BB52-90D4621DE15F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1B97E17-DA6F-4C95-BB52-90D4621DE15F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1B97E17-DA6F-4C95-BB52-90D4621DE15F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
