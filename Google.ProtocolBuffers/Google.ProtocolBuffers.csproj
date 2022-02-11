@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <PackageReference Include="CompareNETObjects" Version="4.66.0" />
-    <PackageReference Include="Google.Protobuf" Version="3.12.3" />
+    <PackageReference Include="Google.Protobuf" Version="3.15.0" />
     <PackageReference Include="Google.Protobuf.Tools" Version="3.12.3" />
     <PackageReference Include="MSTest.TestFramework" Version="2.1.2" />
     <PackageReference Include="Tynamix.ObjectFiller" Version="1.5.5" />
